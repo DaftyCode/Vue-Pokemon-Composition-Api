@@ -8,7 +8,7 @@ comprobar con node -v
 
 Y añadimos estas extensiones:
 
-Vue Volar extension Pack: https://marketplace.visualstudio.com/items?itemName=MisterJ.vue-volar-extention-pack
+- Vue Volar extension Pack: https://marketplace.visualstudio.com/items?itemName=MisterJ.vue-volar-extention-pack
 -	Vue Discovery:
 https://marketplace.visualstudio.com/items?itemName=Maantje.vue-discovery
 -	IntelliCode:
