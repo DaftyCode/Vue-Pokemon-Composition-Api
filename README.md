@@ -1,14 +1,67 @@
 # pokemon-composition
 
-This template should help get you started developing with Vue 3 in Vite.
+## Instalar ultima versión de node 
 
-## Recommended IDE Setup
+comprobar con node -v
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Instalamos visual studio
 
-## Customize configuration
+Y añadimos estas extensiones:
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+Vue Volar extension Pack: https://marketplace.visualstudio.com/items?itemName=MisterJ.vue-volar-extention-pack
+-	Vue Discovery:
+https://marketplace.visualstudio.com/items?itemName=Maantje.vue-discovery
+-	IntelliCode:
+https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode
+-	npm Intellisense:
+https://marketplace.visualstudio.com/items?itemName=christian-kohler.npm-intellisense
+-	Vue VSCode Snippets:
+https://marketplace.visualstudio.com/items?itemName=sdras.vue-vscode-snippets
+
+## Iniciamos el proyecto
+
+```sh
+npm init vue@latest
+```
+
+seguimos todos los pasos
+
+## Añadimos Sass para trabajar con scss
+
+```sh
+npm add -D sass
+```
+
+## Meter dentro de carpeta .vscode el settings.json con esto
+
+```sh
+{
+  "editor.rulers": [120],
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": ["source.fixAll.eslint", "source.fixAll.markdownlint"],
+  "eslint.alwaysShowStatus": true,
+  "eslint.validate": ["typescript", "javascript", "html"],
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "vue3snippets.enable-compile-vue-file-on-did-save-code": true
+}
+```
 
 ## Project Setup
 
