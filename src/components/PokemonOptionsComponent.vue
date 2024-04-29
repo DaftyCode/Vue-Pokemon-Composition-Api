@@ -1,12 +1,11 @@
 <template>
   <div class="options-container" v-if="pokemons && pokemons.length > 0">
     <ul>
-      <li
-        v-for="pokemon in pokemons"
-        :key="pokemon.id"
-        @click="$emit('selection', pokemon.id)"
-      >
-        {{ pokemon.name }}
+      <li v-for="pokemon in pokemons" :key="pokemon.id">
+        <button
+          @click="selectOption(pokemon.id)"
+          :disabled="isDisabled"
+          v-bind:class="getClass(pokemon.id)">{{ pokemon.name }}</button>
       </li>
     </ul>
   </div>
@@ -14,12 +13,40 @@
 
 <script>
 export default {
+    data() {
+      return {
+        hit: null,
+        selectedOption: null
+      };
+    },
     props: {
       pokemons: {
         type: Array,
         required: true,
       },
+      goodOption: {
+        type: Number,
+        required: true,
+      }
     },
+    computed: {
+      isDisabled() {
+        return !!this.selectedOption;
+      },
+    },
+    methods: {
+      selectOption(pokemonId) {
+        this.hit = pokemonId === this.goodOption;
+        this.selectedOption = pokemonId;
+        this.$emit('selection', pokemonId);
+      },
+      getClass(pokemonId) {
+        return {
+          'success': this.selectedOption && pokemonId === this.goodOption,
+          'error': this.selectedOption && !this.hit && pokemonId !== this.goodOption
+        };
+      }
+    }
   };
 </script>
 
@@ -31,19 +58,28 @@ export default {
 
   ul {
     list-style-type: none;
+    padding: 0;
 
     li {
-      background-color: white;
-      border-radius: 5px;
-      border: 1px solid var(--border-color);
-      cursor: pointer;
       margin-bottom: 0.8rem;
       width: 250px;
-      padding: 0.5rem;
-      text-align: center;
+      padding: 0;
 
-      &:hover {
-        background-color: var(--button-hover-color);
+      button {
+        background-color: white;
+        text-transform: capitalize;
+
+        &.success{
+          background-color: var(--success-color);
+        }
+
+        &.error{
+          background-color: var(--error-color);
+        }
+
+        &.not:not([disabled]):hover {
+          background-color: var(--button-hover-color);
+        }
       }
     }
   }

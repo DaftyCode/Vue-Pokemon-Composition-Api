@@ -3,7 +3,7 @@
   <div v-else>
     <h1>¿Quién es este Pokemón?</h1>
     <PokemonPictureComponent :pokemonId="pokemon.id" :showPokemon="showPokemon" />
-    <PokemonOptionsComponent :pokemons="pokemonsArr" @selection="checkAnswer($event)" />
+    <PokemonOptionsComponent :pokemons="pokemonsArr" :goodOption="pokemon.id" @selection="checkAnswer($event)" />
 
     <template v-if="showAnswer">
       <h2>{{ message }}</h2>
@@ -61,12 +61,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.new-button {
+  .new-button {
     color: #585858;
     background-color: #acd8ff;
-    border: 1px solid #3f5161;
-    border-radius: 0.25rem;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-}
+  }
+
+  h2{
+    margin-bottom: 1rem;
+  }
 </style>
