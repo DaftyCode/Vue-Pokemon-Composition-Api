@@ -7,7 +7,7 @@
 
     <template v-if="showAnswer">
       <h2>{{ message }}</h2>
-      <button @click="newGame">Nuevo Juego</button>
+      <button @click="newGame" class="new-button">Nuevo Juego</button>
     </template>
   </div>
 </template>
@@ -40,7 +40,7 @@ export default {
       this.showAnswer = true;
 
       if (pokemonId === this.pokemon.id) {
-        this.message = `Correcto!!!, El pokemón es ${this.pokemon.name}`;
+        this.message = `¡Correcto! El pokemón es ${this.pokemon.name}`;
       } else {
         this.message = `Oooopppss, El pokemón era ${this.pokemon.name}`;
       }
@@ -59,3 +59,14 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.new-button {
+    color: #585858;
+    background-color: #acd8ff;
+    border: 1px solid #3f5161;
+    border-radius: 0.25rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+}
+</style>

@@ -39,7 +39,8 @@ npm i sass sass-loader -D
   "editor.insertSpaces": true,
   "editor.tabSize": 2,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit"
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": true
   },
   "eslint.validate": ["typescript", "javascript", "html"],
   "[typescript]": {
